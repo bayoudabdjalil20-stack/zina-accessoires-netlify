@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zina Accessoires</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: white;
+    }
+
+    /* HEADER */
+    header {
+      background: #111;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      color: white;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #ffd84d;
+      margin-top: 4px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd84d;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #ffd84d;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffd84d;
+      color: #111;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    /* SECTION */
+    section {
+      padding: 70px 7%;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .title h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .title p {
+      color: #aaa;
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: #1c1c1c;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #333;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      border-color: #ffd84d;
+    }
+
+    .product img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: #aaa;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .price {
+      color: #ffd84d;
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .order-btn {
+      display: block;
+      text-align: center;
+      background: #ffd84d;
+      color: #111;
+      padding: 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .order-btn:hover {
+      background: white;
+    }
+
+    /* WHY US */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      padding: 35px 25px;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .feature .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #191919;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #ccc;
+      margin: 12px 0;
+      font-size: 18px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0b0b0b;
+      color: #888;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      header {
+        padding: 18px 5%;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .products,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="logo">
+      Zina
+      <span>ACCESSOIRES</span>
+    </div>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Produits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+
+    <div>
+
+      <h1>
+        Zina <span>Accessoires</span>
+      </h1>
+
+      <p>
+        Découvrez nos accessoires élégants pour femmes et hommes.
+      </p>
+
+      <a href="#produits" class="btn">
+        Voir les produits
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="produits">
+
+    <div class="title">
+
+      <h2>Nos Produits</h2>
+
+      <p>
+        Découvrez notre sélection d'accessoires.
+      </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <!-- PRODUIT 1 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
+          alt="Bijou élégant"
+        >
+
+        <div class="product-info">
+
+          <h3>Bracelet Élégant</h3>
+
+          <p>
+            Bracelet moderne et élégant, parfait pour compléter votre look.
+          </p>
+
+          <div class="price">
+            49 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20le%20Bracelet%20Élégant%20à%2049%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUIT 2 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=900&q=80"
+          alt="Accessoire"
+        >
+
+        <div class="product-info">
+
+          <h3>Accessoire Chic</h3>
+
+          <p>
+            Un modèle tendance et facile à porter au quotidien.
+          </p>
+
+          <div class="price">
+            59 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20l'Accessoire%20Chic%20à%2059%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUIT 3 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80"
+          alt="Montre homme"
+        >
+
+        <div class="product-info">
+
+          <h3>Montre Homme</h3>
+
+          <p>
+            Une montre sobre et élégante pour homme.
+          </p>
+
+          <div class="price">
+            99 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20la%20Montre%20Homme%20à%2099%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUIT 4 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80"
+          alt="Collier"
+        >
+
+        <div class="product-info">
+
+          <h3>Collier Femme</h3>
+
+          <p>
+            Collier élégant pour vos sorties et occasions spéciales.
+          </p>
+
+          <div class="price">
+            69 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20le%20Collier%20Femme%20à%2069%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUIT 5 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80"
+          alt="Bague"
+        >
+
+        <div class="product-info">
+
+          <h3>Bague Élégante</h3>
+
+          <p>
+            Une bague moderne avec une finition élégante.
+          </p>
+
+          <div class="price">
+            39 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20la%20Bague%20Élégante%20à%2039%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUIT 6 -->
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1627293509201-cd7f4e9a9b1b?auto=format&fit=crop&w=900&q=80"
+          alt="Lunettes"
+        >
+
+        <div class="product-info">
+
+          <h3>Lunettes Tendance</h3>
+
+          <p>
+            Lunettes modernes pour un style unique.
+          </p>
+
+          <div class="price">
+            79 DH
+          </div>
+
+          <a
+            class="order-btn"
+            href="https://wa.me/212620352528?text=Bonjour%20je%20veux%20commander%20les%20Lunettes%20Tendance%20à%2079%20DH"
+            target="_blank"
+          >
+            Commander
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY US -->
+  <section>
+
+    <div class="title">
+
+      <h2>Pourquoi Zina Accessoires ?</h2>
+
+      <p>
+        Notre priorité est votre satisfaction.
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+      <div class="feature">
+
+        <div class="icon">✨</div>
+
+        <h3>Qualité</h3>
+
+        <p>
+          Nous sélectionnons des accessoires élégants et de qualité.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="icon">🚚</div>
+
+        <h3>Livraison</h3>
+
+        <p>
+          Livraison disponible partout au Maroc.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="icon">💬</div>
+
+        <h3>Service client</h3>
+
+        <p>
+          Contactez-nous facilement sur WhatsApp pour votre commande.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="title">
+
+      <h2>Contactez-nous</h2>
+
+      <p>
+        Vous avez une question ? Nous sommes à votre disposition.
+      </p>
+
+    </div>
+
+    <p>
+      📱 WhatsApp : 06 20 35 25 28
+    </p>
+
+    <p>
+      📸 Instagram : Zina Accessoires
+    </p>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/212620352528"
+      target="_blank"
+    >
+      💬 Commander sur WhatsApp
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    © 2026 Zina Accessoires — Tous droits réservés.
+
+  </footer>
+
+
+</body>
+</html>
